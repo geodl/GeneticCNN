@@ -51,7 +51,8 @@ class Properties:
         return child
 
     def mutate(self):
-        self.mutate_epochs()
+        if self.mutate_epochs_allowed:
+            self.mutate_epochs()
         self.mutate_batch_size()
         self.mutate_dropout()
         self.mutate_optimizer()
